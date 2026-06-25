@@ -1,6 +1,6 @@
 // Types are defined locally; no need to import from recordsStore (avoids circular dependency).
 
-const API_BASE = "/api";
+const API_BASE = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/api` : "/api";
 
 // Helper for fetching
 async function request(endpoint: string, options?: RequestInit) {
